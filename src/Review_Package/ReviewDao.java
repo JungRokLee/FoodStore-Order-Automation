@@ -11,9 +11,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.servlet.ServletException;
 import javax.sql.DataSource;
-
 import com.sun.org.apache.xml.internal.serialize.OutputFormat.DTD;
-
 import Food_Package.FoodDto;
 import Member_Package.MemberDto;
 import Order_Package.OrderDao;
@@ -22,15 +20,15 @@ import Review_Package.ReviewDto;
  
 
 public class ReviewDao {
-	int num=0;
+
 	public static final int MEMBER_ORDER_SUCCESS = 1;
 	public static final int MEMBER_DELTETE_SUCCESS = 1;
 	
 	private static ReviewDao instance = new ReviewDao();
 
+	int num=0; // ì¸ë±ìŠ¤ 
 	
 	private ReviewDao() {
-	
 	}  
 	
 	public static ReviewDao getInstance(){
@@ -45,17 +43,17 @@ public class ReviewDao {
 	Connection connection = null;
 	try {
 		context = new InitialContext();
-		// ¿À¶óÅ¬ DB¸¦ »ç¿ëÇÏ±â À§ÇÑ °´Ã¼ context »ı¼º
+		// ï¿½ï¿½ï¿½ï¿½Å¬ DBï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ context ï¿½ï¿½ï¿½ï¿½
 		
 		dataSource = (DataSource)context.lookup("java:comp/env/jdbc/Oracle11g");
-		// context °´Ã¼·Î lookup ¸Ş¼Òµå¿¡ ¸Å°³º¯¼ö¸¦ ÀÌ¿ëÇÏ¿© ¸®¼Ò½º¸¦ È¹µæÇÑ´Ù.
-		// ¿À¶óÅ¬ DB ÀÌ¸§Àº ±âº»ÀûÀ¸·Î java:comp/env ¿¡ µî·ÏµÇ¾î ÀÖ´Ù.
-		// ÇØ´ç ¿µ¿ª¿¡¼­ jdbc/Oracle11g ·Î ¼³Á¤µÈ ÀÌ¸§À» ¾ò¾î¿Â´Ù.
+		// context ï¿½ï¿½Ã¼ï¿½ï¿½ lookup ï¿½Ş¼Òµå¿¡ ï¿½Å°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½Ò½ï¿½ï¿½ï¿½ È¹ï¿½ï¿½ï¿½Ñ´ï¿½.
+		// ï¿½ï¿½ï¿½ï¿½Å¬ DB ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½âº»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ java:comp/env ï¿½ï¿½ ï¿½ï¿½ÏµÇ¾ï¿½ ï¿½Ö´ï¿½.
+		// ï¿½Ø´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ jdbc/Oracle11g ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Â´ï¿½.
 		
 
 		connection = dataSource.getConnection();
-		// ds °´Ã¼·ÎºÎÅÍ Connection  °´Ã¼ ¾ò¾î¿Â´Ù.
-		// Áö±İºÎÅÍ´Â ÀÌ °´Ã¼´Â À¥ ÄÁÅ×ÀÌ³ÊÀÇ DBCP ¿¡ ÀÇÇØ °ü¸®µÈ´Ù.
+		// ds ï¿½ï¿½Ã¼ï¿½Îºï¿½ï¿½ï¿½ Connection  ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½Â´ï¿½.
+		// ï¿½ï¿½ï¿½İºï¿½ï¿½Í´ï¿½ ï¿½ï¿½ ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì³ï¿½ï¿½ï¿½ DBCP ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½È´ï¿½.
 		 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -66,22 +64,22 @@ public class ReviewDao {
 	// ============= insertReview ==================
 		public int insertReview(ReviewDto dto) {
 		
-			int ri = 0;   // Áö¿ª º¯¼ö 
+			int ri = 0;   // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 			Connection connection = null;
 			PreparedStatement pstmt = null;
 			String query = "insert into REVIEW(id, name, title, inform, num)  values(?, ?, ?, ?, ?)";	
 			try {
-				connection = getConnection();  // È£Ãâ - ¸ÇµÚ¿¡ ÀÖÀ½
+				connection = getConnection();  // È£ï¿½ï¿½ - ï¿½ÇµÚ¿ï¿½ ï¿½ï¿½ï¿½ï¿½
 				pstmt = connection.prepareStatement(query);
 				pstmt.setString(1, dto.getId());  
 				pstmt.setString(2, dto.getName());
 				pstmt.setString(3, dto.getTitle());
 				pstmt.setString(4, dto.getInform());
 				pstmt.setInt(5,num );
-				pstmt.executeUpdate();  // ½ÇÇà
+				pstmt.executeUpdate();  // ï¿½ï¿½ï¿½ï¿½
 			       num++;
-				ri = ReviewDao.MEMBER_ORDER_SUCCESS; // 1 ÀÌ¸é -¼º°øÀÌ¸é
-			/*select °¡ ¾Æ´Ï¹Ç·Î resultSet °´Ã¼°¡ ¾ø°í ¹İÈ¯ÇüÀÌ int ÇüÀÌ´Ù.*/
+				ri = ReviewDao.MEMBER_ORDER_SUCCESS; // 1 ï¿½Ì¸ï¿½ -ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½
+			/*select ï¿½ï¿½ ï¿½Æ´Ï¹Ç·ï¿½ resultSet ï¿½ï¿½Ã¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ï¿½ï¿½ï¿½ï¿½ int ï¿½ï¿½ï¿½Ì´ï¿½.*/
 				
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -225,15 +223,15 @@ public class ReviewDao {
 		
 		///////////////////////////////////////////////////////////////////////
 		public int deleteReview(int num) { 
-	   		int ri = 0;   // Áö¿ª º¯¼ö 
+	   		int ri = 0;   // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ 
 	   		Connection connection = null;
 	   		PreparedStatement pstmt = null;
 	   		String query = "Delete from REVIEW where num='"+num+"'";
 	   		try {
-	   			connection = getConnection();  // È£Ãâ - ¸ÇµÚ¿¡ ÀÖÀ½
+	   			connection = getConnection();  // È£ï¿½ï¿½ - ï¿½ÇµÚ¿ï¿½ ï¿½ï¿½ï¿½ï¿½
 	   			pstmt = connection.prepareStatement(query);
-	   			pstmt.executeUpdate();  // ½ÇÇà
-	   			ri = OrderDao.MEMBER_DELTETE_SUCCESS; // 1 ÀÌ¸é -¼º°øÀÌ¸é
+	   			pstmt.executeUpdate();  // ï¿½ï¿½ï¿½ï¿½
+	   			ri = OrderDao.MEMBER_DELTETE_SUCCESS; // 1 ï¿½Ì¸ï¿½ -ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½
 	   		
 	   		} catch (Exception e) {
 	   			e.printStackTrace();

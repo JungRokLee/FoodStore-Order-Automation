@@ -1,4 +1,4 @@
---À½½ÄÁÖ¹® Å×ÀÌºí
+-- ì£¼ë¬¸ì„ ìœ„í•œ DB
 create table ORDERFOOD
 (
 id varchar2(50),
@@ -9,8 +9,3 @@ price int,
 total int default 0,
 time date default sysdate
 )
-
-select * from ORDERFOOD
-drop table ORDERFOOD;
-
-

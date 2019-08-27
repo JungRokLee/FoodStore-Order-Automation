@@ -1,4 +1,4 @@
-   --¸®ºä
+   -- ë¦¬ë·°ë¥¼ ìœ„í•œ DB 
    CREATE TABLE REVIEW(
    id varchar(20),
    name varchar(20),
@@ -7,8 +7,4 @@
    time date default sysdate,
    num int
    );
-   
-   SELECT * from REVIEW
-   
-   DROP table REVIEW;
    

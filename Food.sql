@@ -1,4 +1,4 @@
---À½½Ä Å×ÀÌºí
+-- ë©”ë‰´ë¥¼ êµ¬ì„±í•˜ëŠ” DB
 create table FOOD
 (
 id   varchar2(50),  

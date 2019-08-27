@@ -7,104 +7,106 @@
 
 <!DOCTYPE html>
 <html lang="kr">
-<head> 
-<meta charset="UTF-8">
-<title>¸®ºä¸ñ·Ï</title>
 
-<style rel="stylesheet">
-body {
-	font-family: "Helvetica Neue", Helvetica, Arial;
-	font-size: 14px;
-	line-height: 20px;
-	font-weight: 400;
-	color: #3b3b3b;
-	-webkit-font-smoothing: antialiased;
-	font-smoothing: antialiased;
-	background: #2b2b2b;
-}
+<head>
+	<meta charset="UTF-8">
+	<title>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</title>
 
-.wrapper {
-	margin: 0 auto;
-	padding: 40px;
-	max-width: 800px;
-}
+	<style rel="stylesheet">
+		body {
+			font-family: "Helvetica Neue", Helvetica, Arial;
+			font-size: 14px;
+			line-height: 20px;
+			font-weight: 400;
+			color: #3b3b3b;
+			-webkit-font-smoothing: antialiased;
+			font-smoothing: antialiased;
+			background: #2b2b2b;
+		}
 
-.table {
-	margin: 0 0 40px 0;
-	width: 100%;
-	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-	display: table;
-}
+		.wrapper {
+			margin: 0 auto;
+			padding: 40px;
+			max-width: 800px;
+		}
 
-@media screen and (max-width: 580px) {
-	.table {
-		display: block;
-	}
-}
+		.table {
+			margin: 0 0 40px 0;
+			width: 100%;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+			display: table;
+		}
 
-.row {
-	display: table-row;
-	background: #f6f6f6;
-}
+		@media screen and (max-width: 580px) {
+			.table {
+				display: block;
+			}
+		}
 
-.row:nth-of-type(odd) {
-	background: #e9e9e9;
-}
+		.row {
+			display: table-row;
+			background: #f6f6f6;
+		}
 
-.row.header {
-	font-weight: 900;
-	color: #ffffff;
-	background: #ea6153;
-}
+		.row:nth-of-type(odd) {
+			background: #e9e9e9;
+		}
 
-.row.green {
-	background: #27ae60;
-}
+		.row.header {
+			font-weight: 900;
+			color: #ffffff;
+			background: #ea6153;
+		}
 
-.row.blue {
-	background: #2980b9;
-}
+		.row.green {
+			background: #27ae60;
+		}
 
-@media screen and (max-width: 580px) {
-	.row {
-		padding: 8px 0;
-		display: block;
-	}
-}
+		.row.blue {
+			background: #2980b9;
+		}
 
-.cell {
-	padding: 6px 12px;
-	display: table-cell;
-}
+		@media screen and (max-width: 580px) {
+			.row {
+				padding: 8px 0;
+				display: block;
+			}
+		}
 
-@media screen and (max-width: 580px) {
-	.cell {
-		padding: 2px 12px;
-		display: block;
-	}
-}
-</style>
+		.cell {
+			padding: 6px 12px;
+			display: table-cell;
+		}
+
+		@media screen and (max-width: 580px) {
+			.cell {
+				padding: 2px 12px;
+				display: block;
+			}
+		}
+	</style>
 </head>
+
 <body>
 	<form>
 
 
 		<div class="wrapper">
 			<h3>
-				<font color='white'>°í°´µéÀÌ ÀÛ¼ºÇÑ ¸®ºäÀÔ´Ï´Ù. </font>
+				<font color='white'>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ô´Ï´ï¿½. </font>
 			</h3>
 			<div class="table">
 
 				<div class="row header blue">
-					<div class="cell">ÀÛ¼ºÀÚ</div>
-					<div class="cell">Á¦¸ñ</div>
-					<div class="cell">³»¿ë</div>
-					<div class="cell">½Ã°£</div>
-				
+					<div class="cell">ï¿½Û¼ï¿½ï¿½ï¿½</div>
+					<div class="cell">ï¿½ï¿½ï¿½ï¿½</div>
+					<div class="cell">ï¿½ï¿½ï¿½ï¿½</div>
+					<div class="cell">ï¿½Ã°ï¿½</div>
+
 				</div>
 
 
-                <jsp:useBean id="dto" class="Food_Package.FoodDto" scope="page" />
+				<jsp:useBean id="dto" class="Food_Package.FoodDto" scope="page" />
 				<jsp:setProperty name="dto" property="*" />
 				<%
 				String orderId = (String)session.getAttribute("id"); 
@@ -117,7 +119,7 @@ body {
 				ArrayList<ReviewDto> dtos = dao.SearchReview(id);
 					 
 				
-					for (int i = 0; i < dtos.size(); i++) { // dtos ¸¦ size ¸¸Å­ for ¹® µ¹¸²
+					for (int i = 0; i < dtos.size(); i++) { // dtos ï¿½ï¿½ size ï¿½ï¿½Å­ for ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 						ReviewDto Fdto = dtos.get(i);
 						String name = Fdto.getName(); 
 						String title = Fdto.getTitle(); 
@@ -125,8 +127,8 @@ body {
 					   	Timestamp time = Fdto.getDate();
 						
 				%>
-				
-				<div class="row">  
+
+				<div class="row">
 					<div class="cell">
 						<%=name%>
 					</div>
@@ -134,21 +136,21 @@ body {
 						<%=title%>
 					</div>
 
-					
+
 					<div class="cell">
 						<%=inform%>
 					</div>
-		
-						<div class="cell">
+
+					<div class="cell">
 						<%=time%>
 					</div>
-			
+
 				</div>
-     
-				 <%	}  %>
-				
+
+				<%	}  %>
 
 			</div>
 
 </body>
+
 </html>

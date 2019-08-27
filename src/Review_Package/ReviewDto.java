@@ -11,7 +11,6 @@ public class ReviewDto {
 	private Timestamp date;
 	private int num;
 	public ReviewDto() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public ReviewDto(String id, String name, String title, String inform,Timestamp date, int num) {
@@ -22,7 +21,8 @@ public class ReviewDto {
 		this.date = date;
 		this.num = num;
 	}
-	
+
+	/* 리뷰 작성자의 id를 위한 getter와 Setter */
 	public String getId() {
 		return id;
 	}
@@ -31,6 +31,7 @@ public class ReviewDto {
 		this.id = id;
 	}
 	
+	/* 리뷰 작성자의 이름을 위한 getter와 Setter */
 	public String getName() {
 		return name;
 	}
@@ -39,7 +40,7 @@ public class ReviewDto {
 		this.name = name;
 	}
 	
-
+	/* 리뷰의 제목을 위한 getter와 Setter */
 	public String getTitle() {
 		return title;
 	}
@@ -47,7 +48,8 @@ public class ReviewDto {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	
+
+	/* 리뷰의 내용을 위한 getter와 Setter */
 	public String getInform() {
 		return inform;
 	}
@@ -55,6 +57,8 @@ public class ReviewDto {
 	public void setInform(String inform) {
 		this.inform = inform;
 	}
+
+	/* 리뷰가 작성된 날짜를 위한 getter와 Setter */
 	public Timestamp getDate() {
 		return date;
 	}
@@ -63,10 +67,11 @@ public class ReviewDto {
 		this.date = date;
 	}
 
+	/* 리뷰 번호를 위한 getter와 Setter */
 	public int getNum() {
 		return num;
 	}
-
+	
 	public void setNum(int num) {
 		this.num = num;
 	}

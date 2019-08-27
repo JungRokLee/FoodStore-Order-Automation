@@ -1,4 +1,4 @@
-   --À½½ÄÁ¡
+   -- ê°€ê²Œ ì •ë³´ë¥¼ êµ¬ì„±í•˜ëŠ” DB
    CREATE TABLE FOODSTORE(
    id varchar(20)PRIMARY KEY,
    pw varchar(20),
@@ -8,9 +8,7 @@
    );
    
 
- select * From FOODSTORE ; 
- 
- drop table FOODSTORE;
+
 
 
 
