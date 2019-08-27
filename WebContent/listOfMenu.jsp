@@ -25,7 +25,7 @@ ArrayList<OrderDto> dtos = dao.SearchOrder(id);
 <html lang="kr">
 <head> 
 <meta charset="UTF-8">
-<title>ÁÖ¹® ¸ñ·Ï</title>
+<title>ì£¼ë¬¸ ëª©ë¡</title>
 
 <style rel="stylesheet">
 body {
@@ -107,27 +107,25 @@ body {
 
 		<div class="wrapper">
 			<h3>
-				<font color='white'>ÁÖ¹® ¸ñ·Ï </font>
+				<font color='white'>ì£¼ë¬¸ ëª©ë¡ </font>
 				
-			</h3>	<font color='white'>ÃÑ ÆÇ¸Å¾× : <%=totalprice %>¿ø!!!</font> 
-			<a href="showBest.jsp"><font color='white' size=2>º£½ºÆ®¼¿·¯ È®ÀÎ(Å¬¸¯)</font></a>
+			</h3>	<font color='white'>ì´ íŒë§¤ì•¡ : <%=totalprice %>ì›!!!</font> 
+			<a href="showBest.jsp"><font color='white' size=2>ë² ìŠ¤íŠ¸ì…€ëŸ¬ í™•ì¸(í´ë¦­)</font></a>
 			<div class="table">
 
 				<div class="row header blue">
 					
-					<div class="cell">Å×ÀÌºí¹øÈ£</div>
-					<div class="cell">À½½ÄÀÌ¸§</div>
-					<div class="cell">¼ö·®</div>
-					<div class="cell">°¡°Ý</div>
-					<div class="cell">ÃÑ ÆÇ¸Å¾×</div>
-					<div class="cell">ÁÖ¹®½Ã°£</div>
+					<div class="cell">í…Œì´ë¸”ë²ˆí˜¸</div>
+					<div class="cell">ìŒì‹ì´ë¦„</div>
+					<div class="cell">ìˆ˜ëŸ‰</div>
+					<div class="cell">ê°€ê²©</div>
+					<div class="cell">ì´ íŒë§¤ì•¡</div>
+					<div class="cell">ì£¼ë¬¸ì‹œê°„</div>
 				</div>
 
 
 				<%
-				
-				
-					for (int i = 0; i < dtos.size(); i++) { // dtos ¸¦ size ¸¸Å­ for ¹® µ¹¸²
+					for (int i = 0; i < dtos.size(); i++) { // dtos ë¥¼ size ë§Œí¼ for ë¬¸ ëŒë¦¼
 						OrderDto Fdto = dtos.get(i);
 					
 					int table_num = Fdto.getTable_num();
@@ -137,11 +135,6 @@ body {
 					int total = Fdto.getTotal();
 					Timestamp timestamp =Fdto.getDate();
 					Date time = new Date(timestamp.getTime()); 
-						
-					
-					
-				
-					
 				%>
 				
 				<div class="row">  
@@ -157,10 +150,10 @@ body {
 						<%=count%>
 					</div>
 					<div class="cell">
-						<%=price%>¿ø
+						<%=price%>ì›
 					</div>
 					<div class="cell">
-						<%=total%>¿ø
+						<%=total%>ì›
 					</div>
 					<div class="cell">
 						<%=timestamp%>
@@ -176,8 +169,8 @@ body {
 				 <%	}  %>
 				 
 				 	
-<input type="submit" value="ÁÖ¹®Á¤º¸ ÃÊ±âÈ­ "> 
+<input type="submit" value="ì£¼ë¬¸ì •ë³´ ì´ˆê¸°í™” "> 
 
-<a href="showDate.jsp"><font color='white' size=2>ÁÖ¹® ³¯Â¥º°·Î º¸±â</font></a>
+<a href="showDate.jsp"><font color='white' size=2>ì£¼ë¬¸ ë‚ ì§œë³„ë¡œ ë³´ê¸°</font></a>
 </body>
 </html>
